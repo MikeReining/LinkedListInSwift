@@ -59,7 +59,7 @@ public class LinkedList<T: Equatable> {
         var previousNode = LLNode<T>()
         
         // If value found, exit the loop and print values
-        while (current.key != nil) {
+        while (current.next != nil) {
             if current.key == searchForKey {
                 println("Found value \(searchForKey) at index \(listIndex)")
                 return listIndex
@@ -141,5 +141,17 @@ linkedList.findIndexForKey(10)
 linkedList.findIndexForKey(20)
 linkedList.findIndexForKey(30)
 
+
+let stringList = LinkedList<String>()
+
+stringList.addLinkAtIndex("hello", index: 0)
+stringList.addLinkAtIndex("hi", index: 0)
+stringList.addLinkAtIndex("yes", index: 0)
+stringList.addLinkAtIndex("tacos", index: 0)
+
+stringList.listAll()
+
+stringList.findIndexForKey("yes")
+stringList.findIndexForKey("not in list")
 
 

@@ -26,6 +26,8 @@
 		27216C221A6739A4006CA237 /* LinkedListSwift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LinkedListSwift; sourceTree = BUILT_PRODUCTS_DIR; };
 		27216C251A6739A4006CA237 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		27216C2C1A6739BE006CA237 /* LinkedList.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LinkedList.playground; sourceTree = "<group>"; };
+		27216C2D1A6767A8006CA237 /* ScratchPad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ScratchPad.playground; sourceTree = "<group>"; };
+		279A6CDF1A6771C100086CE0 /* LinkedList2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LinkedList2.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				27216C2C1A6739BE006CA237 /* LinkedList.playground */,
+				27C5C92B1A67832200FF4976 /* ScratchPads */,
 				27216C241A6739A4006CA237 /* LinkedListSwift */,
 				27216C231A6739A4006CA237 /* Products */,
 			);
@@ -62,6 +65,15 @@
 				27216C251A6739A4006CA237 /* main.swift */,
 			);
 			path = LinkedListSwift;
+			sourceTree = "<group>";
+		};
+		27C5C92B1A67832200FF4976 /* ScratchPads */ = {
+			isa = PBXGroup;
+			children = (
+				279A6CDF1A6771C100086CE0 /* LinkedList2.playground */,
+				27216C2D1A6767A8006CA237 /* ScratchPad.playground */,
+			);
+			name = ScratchPads;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +247,7 @@
 				27216C2B1A6739A4006CA237 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

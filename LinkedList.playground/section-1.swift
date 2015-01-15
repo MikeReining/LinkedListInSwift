@@ -6,17 +6,21 @@ import UIKit
 //generic linked list structure
 
 class LLNode<T> {
-    var key: T? = nil
+    var key: T! = nil
     var next: LLNode? = nil
     var previous: LLNode? = nil
 }
 
 //generic linked list implementation
 public class LinkedList<T: Equatable> {
+    
+    // create a new LLNode instance
     private var head: LLNode<T> = LLNode<T>()
     
     //MARK: TASK 2 List All Function
     func listAll() {
+        println("---------TASK 2------------")
+        println("PRINTING ALL ITEMS IN LIST")
         //establish the head node
         if (head.key == nil) {
             println("The List is Empty")
@@ -24,52 +28,52 @@ public class LinkedList<T: Equatable> {
         }
         
         //establish the trailer, current and new items
-        var current: LLNode<T>? = head
-        var trailer: LLNode<T>? = nil
-        var listIndex: Int = 0
+        var current: LLNode! = head
         
         //iterate through the list to print each item
         while (current != nil) {
-            println("\(current!.key!)")
+            println("Link item is: \(current!.key!)")
             //iterate through to the next item
-            trailer = current
             current = current?.next
-            listIndex += 1
         } //end while
         
     }
     
-    //MARK: TASK 3 Search Function
-    func findIndexForKey (searchFor: LLNode<T>) -> Int? {
-        //establish the head node
+    //MARK: TASK 3 Search Function: return index to the first list item with a specified value
+    func findIndexForKey (searchForKey: T) -> Int? {
+        println("---------TASK 3------------")
+        //check if head node exists
         if (head.key == nil) {
             println("Nothing Found: LinkedList is Empty")
             return nil
         }
-        
-        //establish the trailer, current and new items
-        var current: LLNode<T>? = head
-        var trailer: LLNode<T>? = nil
         var listIndex: Int = 0
+
+        // check if value is at the head
+        if head.key == searchForKey {
+            println("Found value \(searchForKey) at index \(listIndex)")
+            return listIndex
+        }
         
-        //iterate through the list to search for item
-        while (current != nil) {
-            if current!.key == searchFor.key {
-                println("Found item at index: \(listIndex)")
+        var current = head
+        var previousNode = LLNode<T>()
+        
+        // If value found, exit the loop and print values
+        while (current.key != nil) {
+            if current.key == searchForKey {
+                println("Found value \(searchForKey) at index \(listIndex)")
+                return listIndex
             }
-            println("\(current!.key!)")
-            //iterate through to the next item
-            trailer = current
-            current = current?.next
+            previousNode = current
+            current = current.next!
             listIndex += 1
-        } //end while
+        }
         
-        return 1
+        return nil
     }
     
-    
     //MARK: TASK 4 Insert Function
-    //add generic nodes at a specified index
+    //add generic nodes at index 0
     func addLinkAtIndex(key: T, index: Int) {
         
         //establish the head node
@@ -123,13 +127,19 @@ let linkedList = LinkedList () as LinkedList<Int>
 
 // TASK 4: Insert items into linked list object
 
-linkedList.addLinkAtIndex(1, index: 0)
 linkedList.addLinkAtIndex(10, index: 0)
+linkedList.addLinkAtIndex(20, index: 0)
+linkedList.addLinkAtIndex(30, index: 0)
 
 // TASK 2: Run List All Function
 
-let myLLNode = LLNode
-
 linkedList.listAll()
+
+//MARK: TASK 3 Search Function: return index to the first list item with a specified value
+
+linkedList.findIndexForKey(10)
+linkedList.findIndexForKey(20)
+linkedList.findIndexForKey(30)
+
 
 
